@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* co.edu.escuelaing.arep.Main
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* edu.escuelaing.arep.Main
