@@ -3,7 +3,7 @@
 ## Description
 This software calculate the Standard Deviation and Mean of a set of numbers, I will made this to the class AREP in Escuela Colombiana de Ingeniería Julio Garavito. This APP is deployed in Heroku you can find the link down
 
-[![CircleCI](https://circleci.com/gh/orlandoagk/areplab3.svg?style=svg)](https://app.circleci.com/pipelines/github/orlandoagk)
+[![CircleCI](https://circleci.com/gh/orlandoagk/AREPlab3.svg?style=svg)](https://app.circleci.com/pipelines/github/orlandoagk)
 ## Execute
 ### Code (Deploying in Localhost)
 1. `git clone https://github.com/orlandoagk/areplab2.git`
