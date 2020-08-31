@@ -1,6 +1,6 @@
 package edu.escuelaing.arep.components;
 
-import com.sun.media.jfxmedia.logging.Logger;
+
 
 import java.io.*;
 import java.lang.reflect.Method;
@@ -57,7 +57,7 @@ public class MiSpark {
         if(endPoints.get(resource) == null) {
             endPoints.put(resource, arrowFunction);
         } else {
-            Logger.logMsg(0,"Ya existe una API ofrecida con ese recurso");
+            System.out.println("No se pudo");
         }
     }
 
