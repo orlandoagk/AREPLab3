@@ -1,12 +1,8 @@
 package edu.escuelaing.arep.components;
 
-import com.sun.xml.internal.ws.util.ByteArrayBuffer;
 
 import java.io.*;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+
 
 public class DirectoryReader {
 

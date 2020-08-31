@@ -2,16 +2,12 @@ package edu.escuelaing.arep.components;
 
 import com.sun.media.jfxmedia.logging.Logger;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.lang.reflect.Method;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.sun.deploy.cache.Cache.copyStream;
 
 public class MiSpark {
     private Map<String, ArrowFunction> endPoints = new HashMap<>();
@@ -43,7 +39,11 @@ public class MiSpark {
                 out.println(outputLine);
             } else {
                 FileInputStream inst=new FileInputStream(directoryReader.imageReader(resource));
-                copyStream(inst,clientSocket.getOutputStream());
+                try {
+                    copyStream(inst, clientSocket.getOutputStream());
+                } catch(javax.xml.ws.WebServiceException ex){
+                    System.out.println(ex.getMessage());
+                }
             }
         } catch (FileNotFoundException ex){
             System.out.println("No se encontró el recurso "+resource);
@@ -77,5 +77,33 @@ public class MiSpark {
             outputLine += endPoints.get(resource).call();
             out.println(outputLine);
         }
+    }
+
+    public static void copyStream(InputStream var0, OutputStream var1) throws IOException {
+        BufferedInputStream var2 = new BufferedInputStream(var0);
+        BufferedOutputStream var3 = new BufferedOutputStream(var1);
+        byte[] var4 = new byte[10240];
+
+        try {
+            for(int var5 = var2.read(var4); var5 >= 0; var5 = var2.read(var4)) {
+                var3.write(var4, 0, var5);
+            }
+        } finally {
+            try {
+                if (var3 != null) {
+                    var3.close();
+                }
+            } catch (Exception var14) {
+            }
+
+            try {
+                if (var2 != null) {
+                    var2.close();
+                }
+            } catch (Exception var13) {
+            }
+
+        }
+
     }
 }

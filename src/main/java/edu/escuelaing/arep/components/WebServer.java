@@ -1,16 +1,15 @@
 package edu.escuelaing.arep.components;
 
 import com.sun.net.httpserver.HttpServer;
-import org.eclipse.jetty.server.Server;
+
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.URI;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import static com.sun.deploy.cache.Cache.copyStream;
 
 public class WebServer {
     private int port = 36000;
