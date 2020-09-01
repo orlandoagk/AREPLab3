@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 public class WebServer {
     private int port = 36000;
     private boolean isRunning = true;
-    private MiSpark spark = new MiSpark();
+    private MiSpark spark = null;
 
 
     public WebServer() {

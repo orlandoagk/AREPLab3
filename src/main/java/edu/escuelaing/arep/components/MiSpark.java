@@ -11,6 +11,11 @@ import java.util.Map;
 
 public class MiSpark {
     private Map<String, ArrowFunction> endPoints = new HashMap<>();
+    private Persistence persistence = null;
+
+    public MiSpark(Persistence persistence){
+        this.persistence = persistence;
+    }
 
     public void getStaticResource(String resource, PrintWriter out, Socket clientSocket) throws IOException {
         DirectoryReader directoryReader = new DirectoryReader("src/main/resources");
