@@ -1,7 +1,7 @@
 # AREP Lab 3
 
 ## Description
-In this project we build a Web Server like Java Spark, this server support the method get with this you can build a API with a lambda function and we implement the static document devolution here read the files that are in the main/resources path
+In this project we build a Web Server like Java Spark, this server support the method get with this you can build a API with a lambda function and we implement the static document devolution here read the files that are in the main/resources path, the server has a connection with PostgreSQL that is deployed in Heroku both
 
 [![CircleCI](https://circleci.com/gh/orlandoagk//AREPLab3.svg?style=svg)](https://app.circleci.com/pipelines/github/orlandoagk)
 ## Execute
