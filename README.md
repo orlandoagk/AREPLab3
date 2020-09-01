@@ -24,6 +24,8 @@ In this project we build a Web Server like Java Spark, this server support the m
 #### API Resources
 1. `/API/probandoapi`
 2. `/API/getBDMessage`
+3. `/API/insertIntoDB?user={User}Luis&message={Message}`
+
 
 **If you want to create your own API Endpoint you need to call in the main the get method of Spark implementation that is in Main class**
 

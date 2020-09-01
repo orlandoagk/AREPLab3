@@ -74,10 +74,10 @@ public class WebServer {
                 new InputStreamReader(clientSocket.getInputStream()));
         String inputLine, outputLine;
         boolean resourceInLine = true;
-        String resource = "";
+        Response resource = null;
         while ((inputLine = in.readLine()) != null) {
             if(resourceInLine) {
-                resource = inputLine.split(" ")[1];
+                resource = new Response(inputLine.split(" ")[1]);
                 resourceInLine = false;
             }
             System.out.println("Recibí: " + inputLine);
@@ -88,12 +88,13 @@ public class WebServer {
         createResponse(resource,out,clientSocket);
     }
 
-    private void createResponse(String resource, PrintWriter out, Socket clientSocket) throws IOException {
-        if (resource.startsWith("/API")) {
-            String appuri = resource.substring(4);
-            spark.getAPIResource(appuri, out);
-        } else {
-            spark.getStaticResource(resource, out,clientSocket);
+    private void createResponse(Response response, PrintWriter out, Socket clientSocket) throws IOException {
+        if (response!= null && response.getResource().startsWith("/API")) {
+            String appuri = response.getResource().substring(4);
+            response.setResource(appuri);
+            spark.getAPIResource(response, out);
+        } else if (response != null){
+            spark.getStaticResource(response.getResource(), out,clientSocket);
         }
         out.close();
     }

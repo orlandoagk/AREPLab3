@@ -66,20 +66,20 @@ public class MiSpark {
         }
     }
 
-    public void getAPIResource(String resource, PrintWriter out) throws IOException {
+    public void getAPIResource(Response response, PrintWriter out) throws IOException {
         String outputLine = "HTTP/1.1 200 OK\r\n"
                 + "Content-Type: text/html\r\n"
                 + "\r\n"
                 + "<!DOCTYPE html>\n";
 
-        if(endPoints.get(resource)==null){
-            System.out.println("No se encontró el recurso "+resource);
+        if(endPoints.get(response.getResource())==null){
+            System.out.println("No se encontró el recurso "+response.getResource());
             outputLine = "HTTP/1.1 404 NotFound\r\n\r\n"+ "<!DOCTYPE html>\n";
             DirectoryReader directoryReader = new DirectoryReader("src/main/resources");
             outputLine+=outputLine += directoryReader.fileReader("/NotFound.html");
             out.println(outputLine);
         } else {
-            outputLine += endPoints.get(resource).call();
+            outputLine += endPoints.get(response.getResource()).call(response);
             out.println(outputLine);
         }
     }
