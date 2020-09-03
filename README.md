@@ -6,7 +6,7 @@ In this project we build a Web Server like Java Spark, this server support the m
 [![CircleCI](https://circleci.com/gh/orlandoagk/AREPLab3.svg?style=svg)](https://circleci.com/gh/orlandoagk//AREPLab3)
 ## Execute
 ### Code (Deploying in Localhost)
-1. `git clone https://github.com/orlandoagk/https://github.com/orlandoagk/AREPLab3.git`
+1. `git clone https://github.com/orlandoagk/AREPLab3.git`
 2. `cd areplab2`
 3. `mvn compile`
 4. `mvn clean package`
