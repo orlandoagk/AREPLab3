@@ -3,7 +3,6 @@
 ## Description
 In this project we build a Web Server like Java Spark, this server support the method get with this you can build a API with a lambda function and we implement the static document devolution here read the files that are in the main/resources path, the server has a connection with PostgreSQL that is deployed in Heroku both
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://areplab3.herokuapp.com/)
-[![CircleCI](https://circleci.com/gh/AndresMarcelo7/TallerHerokuAREP.svg?style=svg)](https://circleci.com/gh/AndresMarcelo7/TallerHerokuAREP)
 [![CircleCI](https://circleci.com/gh/orlandoagk/AREPLab3.svg?style=svg)](https://circleci.com/gh/orlandoagk//AREPLab3)
 ## Execute
 ### Code (Deploying in Localhost)
